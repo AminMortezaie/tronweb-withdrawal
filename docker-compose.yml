@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  ts:
+    build:
+      context: .
+      dockerfile: Dockerfile-ts
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    restart: unless-stopped
+
+networks:
+    my-network:
